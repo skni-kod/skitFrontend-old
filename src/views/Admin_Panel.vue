@@ -9,37 +9,16 @@
             <button id="admin-delete" @click="toggle4 = !toggle4; toggle2 = false; toggle3 = false; toggle1 = false" class="text-red-400 font-bold border-red-400 border-2 px-16 py-4 rounded-full">Usuń</button>
         </div>
         <div id="div-show" v-if="toggle1" class="grid grid-cols-4 justify-center font-mono mx-16 gap-4">
-            <button id="show-all-students" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Wszyscy studenci</button>
-            <button id="show-all-students-without-project" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Wszyscy studenci bez projektu</button>
-            <button id="show-student-per-index" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Pojedyncza osoba po indeksie</button>
-            <button id="show-all-projects" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Wszystkie projekty</button>
-            <button id="show-one-project" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Pojedynczy projekt</button>
-            <button id="show-project-students" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Wszyscy studenci z danego projektu</button>
-            <button id="show-all-sections" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Wszystkie sekcje</button>
-            <button id="show-one-section" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Pojedyncza sekcja</button>
-            <button id="show-all-projects-in-section" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Wszystkie projekty z danej sekcji</button>
-            <button id="show-all-roles" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Wszystkie role</button>
-            <button id="show-one-role" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Pojedyncza rola</button>
-            <button id="show-all-students-with-role" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">Wszyscy studenci z daną rangą</button>
+            <button v-for="button in ShowButtons" :key="button.id" :id='button.id' class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
         </div>
         <div id="div-add" v-else-if="toggle2" class="grid grid-cols-4 justify-center font-mono mx-16 gap-4">
-            <button id="add-student" class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">Dodanie studenta</button>
-            <button id="add-project-to-student" class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">Dodanie projektu studentowi</button>
-            <button id="add-role-to-student" class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">Dodanie roli studentowi</button>
-            <button id="add-project" class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">Dodanie projektu</button>
-            <button id="add-section" class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">Dodanie sekcji</button>
-            <button id="add-role" class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">Dodanie roli</button>
+            <button v-for="button in AddButtons" :key="button.id" :id='button.id' class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
         </div>
         <div id="div-update" v-else-if="toggle3" class="grid grid-cols-4 justify-center font-mono mx-16 gap-4">
-            <button id="to-do" class="text-skni-blue-500 font-bold border-skni-blue-500 border-2 px-12 py-3 rounded-full">TODO</button>
+            <button v-for="button in UpdateButtons" :key="button.id" :id='button.id' class="text-skni-blue-500 font-bold border-skni-blue-500 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
         </div>
         <div id="div-delete" v-else-if="toggle4" class="grid grid-cols-4 justify-center font-mono mx-16 gap-4">
-            <button id="delete-role-from-student" class="text-red-400 font-bold border-red-400 border-2 px-12 py-3 rounded-full">Usunięcie studentowi roli</button>
-            <button id="delete-project-from-student" class="text-red-400 font-bold border-red-400 border-2 px-12 py-3 rounded-full">Usunięcie studentowi projektu</button>
-            <button id="delete-student" class="text-red-400 font-bold border-red-400 border-2 px-12 py-3 rounded-full">Usunięcie danego studenta</button>
-            <button id="delete-project" class="text-red-400 font-bold border-red-400 border-2 px-12 py-3 rounded-full">Usunięcie danego projektu</button>
-            <button id="delete-section" class="text-red-400 font-bold border-red-400 border-2 px-12 py-3 rounded-full">Usunięcie danej sekcji</button>
-            <button id="delete-role" class="text-red-400 font-bold border-red-400 border-2 px-12 py-3 rounded-full">Usunięcie danej roli</button>
+            <button v-for="button in DeleteButtons" :key="button.id" :id='button.id' class="text-red-400 font-bold border-red-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
         </div>
     </div>
   </section>
@@ -48,17 +27,50 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component ({
-  data () {
+@Component
+export default class Admin_Panel extends Vue {
+    private   data () {
       return {
-          toggle1: false,
-          toggle2: false,
-          toggle3: false,
-          toggle4: false
+            toggle1: false,
+            toggle2: false,
+            toggle3: false,
+            toggle4: false,
+            ShowButtons:[
+                {id:'show-all-students',text:'Wszyscy studenci'},
+                {id:'show-all-students-without-project',text:'Wszyscy studenci bez projektu'},
+                {id:'show-student-per-index',text:'Pojedyncza osoba po indeksie'},
+                {id:'show-all-projects',text:'Wszystkie projekty'},
+                {id:'show-one-project',text:'Pojedynczy projekt'},
+                {id:'show-project-students',text:'Wszyscy studenci z danego projektu'},
+                {id:'show-all-sections',text:'Wszystkie sekcje'},
+                {id:'show-one-section',text:'Pojedyncza sekcja'},
+                {id:'show-all-projects-in-section',text:'Wszystkie projekty z danej sekcji'},
+                {id:'show-all-roles',text:'Wszystkie role'},
+                {id:'show-one-role',text:'Pojedyncza rola'},
+                {id:'show-all-students-with-role',text:'Wszyscy studenci z daną rangą'}
+              ],
+            AddButtons:[
+                {id:'add-student',text:'Dodanie studenta'},
+                {id:'add-project-to-student',text:'Dodanie projektu studentowi'},
+                {id:'add-role-to-student',text:'Dodanie roli studentowi'},
+                {id:'add-project',text:'Dodanie projektu'},
+                {id:'add-section',text:'Dodanie sekcji'},
+                {id:'add-role',text:'Dodanie roli'},
+              ],
+            UpdateButtons:[
+                {id:'to-do',text:'TODO'}
+              ],
+            DeleteButtons:[
+                {id:'delete-role-from-student',text:'Usunięcie studentowi roli'},
+                {id:'delete-project-from-student',text:'Usunięcie studentowi projektu'},
+                {id:'delete-student',text:'Usunięcie studenta'},
+                {id:'delete-project',text:'Usunięcie projektu'},
+                {id:'delete-section',text:'Usunięcie sekcji'},
+                {id:'delete-role',text:'Usunięcie roli'},
+              ],
       }
   }
-})
-export default class Admin_Panel extends Vue {}
+}
 </script>
 
 <style scoped>
