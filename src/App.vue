@@ -1,7 +1,8 @@
 <template>
-  <div id="app" class="bg-main-gray">
-    <nav class="flex justify-between items-center ml-48 mr-12">
-      
+  <div id="app" class="bg-gray-900">
+    <nav class=" text-skni-blue-500 text-xl font-mono mx-16 pt-8 font-extrabold">
+      <router-link to="/"><span class="border-skni-blue-500 border-2 p-3 rounded-full px-8 mx-4">Home</span></router-link>
+      <router-link to="/admin-panel"><span class="border-skni-blue-500 border-2 p-3 rounded-full px-8 mx-4">Panel Admina</span></router-link>
     </nav>
     <router-view/>
   </div>

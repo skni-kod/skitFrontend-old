@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="bg-main-gray h-full w-full mt-16 pb-32">
+  <section id="home" class="bg-white h-screen w-full mt-16 pb-32">
     
   </section>
 </template>
