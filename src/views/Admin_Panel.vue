@@ -9,7 +9,7 @@
             <button id="admin-delete" @click="toggle4 = !toggle4; toggle2 = false; toggle3 = false; toggle1 = false" class="text-red-400 font-bold border-red-400 border-2 px-16 py-4 rounded-full">Usuń</button>
         </div>
         <div id="div-show" v-if="toggle1" class="grid grid-cols-4 justify-center font-mono mx-16 gap-4">
-            <button v-for="button in ShowButtons" :key="button.id" :id='button.id' v-on:click="button.func" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
+            <button v-for="button in ShowButtons" :key="button.id" :id='button.id' @click="button.func" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
         </div>
         <div id="div-add" v-else-if="toggle2" class="grid grid-cols-4 justify-center font-mono mx-16 gap-4">
             <button v-for="button in AddButtons" :key="button.id" :id='button.id' class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
@@ -29,10 +29,7 @@ import { Component, Vue } from "vue-property-decorator";
 import {Request, Response, request, response} from 'express';
 import axios, {AxiosResponse} from 'axios';
 
-@Component
-export default class Admin_Panel extends Vue {
-    private   data () {
-      interface Student {
+interface Student {
         id: number;
         indeks: number;
         firstName: string;
@@ -46,53 +43,57 @@ export default class Admin_Panel extends Vue {
         projectParticipant: Array<string>;
       }
 
-      const getAll = async (req: Request, res: Response) => {
-        let result: AxiosResponse = await axios.get('https://localhost:7063/api/student');
-        let posts: [Student] = result.data;
-        return res.status(200).json({
-          message: posts
-        });
-      };
-
-      return {
-            toggle1: false,
-            toggle2: false,
-            toggle3: false,
-            toggle4: false,
-            ShowButtons:[
-                {id:'show-all-students',text:'Wszyscy studenci', func: getAll},
-                {id:'show-all-students-without-project',text:'Wszyscy studenci bez projektu', func: null},
-                {id:'show-student-per-index',text:'Pojedyncza osoba po indeksie', func: null},
-                {id:'show-all-projects',text:'Wszystkie projekty', func: null},
-                {id:'show-one-project',text:'Pojedynczy projekt', func: null},
-                {id:'show-project-students',text:'Wszyscy studenci z danego projektu', func: null},
-                {id:'show-all-sections',text:'Wszystkie sekcje', func: null},
-                {id:'show-one-section',text:'Pojedyncza sekcja', func: null},
-                {id:'show-all-projects-in-section',text:'Wszystkie projekty z danej sekcji', func: null},
-                {id:'show-all-roles',text:'Wszystkie role', func: null},
-                {id:'show-one-role',text:'Pojedyncza rola', func: null},
-                {id:'show-all-students-with-role',text:'Wszyscy studenci z daną rangą', func: null}
-              ],
-            AddButtons:[
-                {id:'add-student',text:'Dodanie studenta'},
-                {id:'add-project-to-student',text:'Dodanie projektu studentowi'},
-                {id:'add-role-to-student',text:'Dodanie roli studentowi'},
-                {id:'add-project',text:'Dodanie projektu'},
-                {id:'add-section',text:'Dodanie sekcji'},
-                {id:'add-role',text:'Dodanie roli'},
-              ],
-            UpdateButtons:[
-                {id:'to-do',text:'TODO'}
-              ],
-            DeleteButtons:[
-                {id:'delete-role-from-student',text:'Usunięcie studentowi roli'},
-                {id:'delete-project-from-student',text:'Usunięcie studentowi projektu'},
-                {id:'delete-student',text:'Usunięcie studenta'},
-                {id:'delete-project',text:'Usunięcie projektu'},
-                {id:'delete-section',text:'Usunięcie sekcji'},
-                {id:'delete-role',text:'Usunięcie roli'},
-              ],
-      }
+@Component
+export default class Admin_Panel extends Vue {
+  private async getAll(req: Request, res: Response) {
+      console.log("gówno");
+      let result: AxiosResponse = await axios.get('https://localhost:7063/api/student');
+      let posts: [Student] = result.data;
+      return res.status(200).json({
+        message: posts
+      });
+    }
+  
+  private   data () {
+    return {
+          toggle1: false,
+          toggle2: false,
+          toggle3: false,
+          toggle4: false,
+          ShowButtons:[
+              {id:'show-all-students',text:'Wszyscy studenci', func: this.getAll},
+              {id:'show-all-students-without-project',text:'Wszyscy studenci bez projektu', func: 'getAll'},
+              {id:'show-student-per-index',text:'Pojedyncza osoba po indeksie', func: 'getAll'},
+              {id:'show-all-projects',text:'Wszystkie projekty', func: 'getAll'},
+              {id:'show-one-project',text:'Pojedynczy projekt', func: 'getAll'},
+              {id:'show-project-students',text:'Wszyscy studenci z danego projektu', func: 'getAll'},
+              {id:'show-all-sections',text:'Wszystkie sekcje', func: 'getAll'},
+              {id:'show-one-section',text:'Pojedyncza sekcja', func: 'getAll'},
+              {id:'show-all-projects-in-section',text:'Wszystkie projekty z danej sekcji', func: 'getAll'},
+              {id:'show-all-roles',text:'Wszystkie role', func: 'getAll'},
+              {id:'show-one-role',text:'Pojedyncza rola', func: 'getAll'},
+              {id:'show-all-students-with-role',text:'Wszyscy studenci z daną rangą', func: 'getAll'}
+            ],
+          AddButtons:[
+              {id:'add-student',text:'Dodanie studenta'},
+              {id:'add-project-to-student',text:'Dodanie projektu studentowi'},
+              {id:'add-role-to-student',text:'Dodanie roli studentowi'},
+              {id:'add-project',text:'Dodanie projektu'},
+              {id:'add-section',text:'Dodanie sekcji'},
+              {id:'add-role',text:'Dodanie roli'},
+            ],
+          UpdateButtons:[
+              {id:'to-do',text:'TODO'}
+            ],
+          DeleteButtons:[
+              {id:'delete-role-from-student',text:'Usunięcie studentowi roli'},
+              {id:'delete-project-from-student',text:'Usunięcie studentowi projektu'},
+              {id:'delete-student',text:'Usunięcie studenta'},
+              {id:'delete-project',text:'Usunięcie projektu'},
+              {id:'delete-section',text:'Usunięcie sekcji'},
+              {id:'delete-role',text:'Usunięcie roli'},
+            ],
+    }
   }
 }
 </script>
