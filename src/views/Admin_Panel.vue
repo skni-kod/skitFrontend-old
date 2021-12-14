@@ -9,7 +9,7 @@
             <button id="admin-delete" @click="toggle4 = !toggle4; toggle2 = false; toggle3 = false; toggle1 = false" class="text-red-400 font-bold border-red-400 border-2 px-16 py-4 rounded-full">Usuń</button>
         </div>
         <div id="div-show" v-if="toggle1" class="grid grid-cols-4 justify-center font-mono mx-16 gap-4">
-            <button v-for="button in ShowButtons" :key="button.id" :id='button.id' class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
+            <button v-for="button in ShowButtons" :key="button.id" :id='button.id' v-on:click="button.func" class="text-green-400 font-bold border-green-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
         </div>
         <div id="div-add" v-else-if="toggle2" class="grid grid-cols-4 justify-center font-mono mx-16 gap-4">
             <button v-for="button in AddButtons" :key="button.id" :id='button.id' class="text-pink-400 font-bold border-pink-400 border-2 px-12 py-3 rounded-full">{{button.text}}</button>
@@ -26,28 +26,52 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import {Request, Response, request, response} from 'express';
+import axios, {AxiosResponse} from 'axios';
 
 @Component
 export default class Admin_Panel extends Vue {
     private   data () {
+      interface Student {
+        id: number;
+        indeks: number;
+        firstName: string;
+        lastName: string;
+        discordName:  string;
+        yearOfStudies: number;
+        studiesTag: string;
+        description: null;
+        roleId: null;
+        role: Array<string>;
+        projectParticipant: Array<string>;
+      }
+
+      const getAll = async (req: Request, res: Response) => {
+        let result: AxiosResponse = await axios.get('https://localhost:7063/api/student');
+        let posts: [Student] = result.data;
+        return res.status(200).json({
+          message: posts
+        });
+      };
+
       return {
             toggle1: false,
             toggle2: false,
             toggle3: false,
             toggle4: false,
             ShowButtons:[
-                {id:'show-all-students',text:'Wszyscy studenci'},
-                {id:'show-all-students-without-project',text:'Wszyscy studenci bez projektu'},
-                {id:'show-student-per-index',text:'Pojedyncza osoba po indeksie'},
-                {id:'show-all-projects',text:'Wszystkie projekty'},
-                {id:'show-one-project',text:'Pojedynczy projekt'},
-                {id:'show-project-students',text:'Wszyscy studenci z danego projektu'},
-                {id:'show-all-sections',text:'Wszystkie sekcje'},
-                {id:'show-one-section',text:'Pojedyncza sekcja'},
-                {id:'show-all-projects-in-section',text:'Wszystkie projekty z danej sekcji'},
-                {id:'show-all-roles',text:'Wszystkie role'},
-                {id:'show-one-role',text:'Pojedyncza rola'},
-                {id:'show-all-students-with-role',text:'Wszyscy studenci z daną rangą'}
+                {id:'show-all-students',text:'Wszyscy studenci', func: getAll},
+                {id:'show-all-students-without-project',text:'Wszyscy studenci bez projektu', func: null},
+                {id:'show-student-per-index',text:'Pojedyncza osoba po indeksie', func: null},
+                {id:'show-all-projects',text:'Wszystkie projekty', func: null},
+                {id:'show-one-project',text:'Pojedynczy projekt', func: null},
+                {id:'show-project-students',text:'Wszyscy studenci z danego projektu', func: null},
+                {id:'show-all-sections',text:'Wszystkie sekcje', func: null},
+                {id:'show-one-section',text:'Pojedyncza sekcja', func: null},
+                {id:'show-all-projects-in-section',text:'Wszystkie projekty z danej sekcji', func: null},
+                {id:'show-all-roles',text:'Wszystkie role', func: null},
+                {id:'show-one-role',text:'Pojedyncza rola', func: null},
+                {id:'show-all-students-with-role',text:'Wszyscy studenci z daną rangą', func: null}
               ],
             AddButtons:[
                 {id:'add-student',text:'Dodanie studenta'},
