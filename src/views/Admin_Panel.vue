@@ -62,17 +62,17 @@ export default class Admin_Panel extends Vue {
           toggle4: false,
           ShowButtons:[
               {id:'show-all-students',text:'Wszyscy studenci', func: this.getAll},
-              {id:'show-all-students-without-project',text:'Wszyscy studenci bez projektu', func: 'getAll'},
-              {id:'show-student-per-index',text:'Pojedyncza osoba po indeksie', func: 'getAll'},
-              {id:'show-all-projects',text:'Wszystkie projekty', func: 'getAll'},
-              {id:'show-one-project',text:'Pojedynczy projekt', func: 'getAll'},
-              {id:'show-project-students',text:'Wszyscy studenci z danego projektu', func: 'getAll'},
-              {id:'show-all-sections',text:'Wszystkie sekcje', func: 'getAll'},
-              {id:'show-one-section',text:'Pojedyncza sekcja', func: 'getAll'},
-              {id:'show-all-projects-in-section',text:'Wszystkie projekty z danej sekcji', func: 'getAll'},
-              {id:'show-all-roles',text:'Wszystkie role', func: 'getAll'},
-              {id:'show-one-role',text:'Pojedyncza rola', func: 'getAll'},
-              {id:'show-all-students-with-role',text:'Wszyscy studenci z daną rangą', func: 'getAll'}
+              {id:'show-all-students-without-project',text:'Wszyscy studenci bez projektu', func: this.getAll},
+              {id:'show-student-per-index',text:'Pojedyncza osoba po indeksie', func: this.getAll},
+              {id:'show-all-projects',text:'Wszystkie projekty', func: this.getAll},
+              {id:'show-one-project',text:'Pojedynczy projekt', func: this.getAll},
+              {id:'show-project-students',text:'Wszyscy studenci z danego projektu', func: this.getAll},
+              {id:'show-all-sections',text:'Wszystkie sekcje', func: this.getAll},
+              {id:'show-one-section',text:'Pojedyncza sekcja', func: this.getAll},
+              {id:'show-all-projects-in-section',text:'Wszystkie projekty z danej sekcji', func: this.getAll},
+              {id:'show-all-roles',text:'Wszystkie role', func: this.getAll},
+              {id:'show-one-role',text:'Pojedyncza rola', func: this.getAll},
+              {id:'show-all-students-with-role',text:'Wszyscy studenci z daną rangą', func: this.getAll}
             ],
           AddButtons:[
               {id:'add-student',text:'Dodanie studenta'},
