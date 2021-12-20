@@ -60,7 +60,7 @@ export default class Admin_Panel extends Vue {
     console.log(posts)
   }
   
-  private   data () {
+  private data () {
     return {
           toggle1: false,
           toggle2: false,
