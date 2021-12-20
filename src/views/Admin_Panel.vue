@@ -26,33 +26,39 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import {Request, Response, request, response} from 'express';
 import axios, {AxiosResponse} from 'axios';
-
-interface Student {
-        id: number;
-        indeks: number;
-        firstName: string;
-        lastName: string;
-        discordName:  string;
-        yearOfStudies: number;
-        studiesTag: string;
-        description: null;
-        roleId: null;
-        role: Array<string>;
-        projectParticipant: Array<string>;
-      }
 
 @Component
 export default class Admin_Panel extends Vue {
-  private async getAll(req: Request, res: Response) {
-      console.log("gówno");
-      let result: AxiosResponse = await axios.get('https://localhost:7063/api/student');
-      let posts: [Student] = result.data;
-      return res.status(200).json({
-        message: posts
-      });
-    }
+  private async getAll() {
+    let result: AxiosResponse = await axios.get('https://localhost:7063/api/student');
+    let posts: [unknown] = result.data;
+    console.log(posts)
+  }
+
+  private async getAllProjects() {
+    let result: AxiosResponse = await axios.get('https://localhost:7063/api/project');
+    let posts: [unknown] = result.data;
+    console.log(posts)
+  }
+  
+  private async getAllSections() {
+    let result: AxiosResponse = await axios.get('https://localhost:7063/api/section');
+    let posts: [unknown] = result.data;
+    console.log(posts)
+  }
+  
+  private async getAllRoles() {
+    let result: AxiosResponse = await axios.get('https://localhost:7063/api/role');
+    let posts: [unknown] = result.data;
+    console.log(posts)
+  }
+  
+  private async getRole(roleId: number) {
+    let result: AxiosResponse = await axios.get('https://localhost:7063/api/role/' + roleId);
+    let posts: [unknown] = result.data;
+    console.log(posts)
+  }
   
   private   data () {
     return {
@@ -64,14 +70,14 @@ export default class Admin_Panel extends Vue {
               {id:'show-all-students',text:'Wszyscy studenci', func: this.getAll},
               {id:'show-all-students-without-project',text:'Wszyscy studenci bez projektu', func: this.getAll},
               {id:'show-student-per-index',text:'Pojedyncza osoba po indeksie', func: this.getAll},
-              {id:'show-all-projects',text:'Wszystkie projekty', func: this.getAll},
+              {id:'show-all-projects',text:'Wszystkie projekty', func: this.getAllProjects},
               {id:'show-one-project',text:'Pojedynczy projekt', func: this.getAll},
               {id:'show-project-students',text:'Wszyscy studenci z danego projektu', func: this.getAll},
-              {id:'show-all-sections',text:'Wszystkie sekcje', func: this.getAll},
+              {id:'show-all-sections',text:'Wszystkie sekcje', func: this.getAllSections},
               {id:'show-one-section',text:'Pojedyncza sekcja', func: this.getAll},
               {id:'show-all-projects-in-section',text:'Wszystkie projekty z danej sekcji', func: this.getAll},
-              {id:'show-all-roles',text:'Wszystkie role', func: this.getAll},
-              {id:'show-one-role',text:'Pojedyncza rola', func: this.getAll},
+              {id:'show-all-roles',text:'Wszystkie role', func: this.getAllRoles},
+              {id:'show-one-role',text:'Pojedyncza rola', func: this.getRole},
               {id:'show-all-students-with-role',text:'Wszyscy studenci z daną rangą', func: this.getAll}
             ],
           AddButtons:[
