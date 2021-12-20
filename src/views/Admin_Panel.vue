@@ -26,35 +26,36 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import {Request, Response, request, response} from 'express';
 import axios, {AxiosResponse} from 'axios';
 
+interface Role {
+  id: number;
+  title: string;
+  description: string;
+  students: Array<Student>;
+}
+
 interface Student {
-        id: number;
-        indeks: number;
-        firstName: string;
-        lastName: string;
-        discordName:  string;
-        yearOfStudies: number;
-        studiesTag: string;
-        description: null;
-        roleId: null;
-        role: Array<string>;
-        projectParticipant: Array<string>;
-      }
+  indeks: string;
+  firstName: string;
+  lastName: string;
+  discordName:  string;
+  yearOfStudies: number;
+  studiesTag: string;
+  description: string;
+  role: Role;
+}
 
 @Component
 export default class Admin_Panel extends Vue {
-  private async getAll(req: Request, res: Response) {
-      console.log("gówno");
-      let result: AxiosResponse = await axios.get('https://localhost:7063/api/student');
-      let posts: [Student] = result.data;
-      return res.status(200).json({
-        message: posts
-      });
-    }
+  private async getAll() {
+    let result: AxiosResponse = await axios.get('https://localhost:7063/api/student');
+    let posts: [Student] = result.data;
+    console.log(posts);
+    return {}
+  }
   
-  private   data () {
+  private data () {
     return {
           toggle1: false,
           toggle2: false,
