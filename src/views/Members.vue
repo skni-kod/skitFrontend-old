@@ -1,8 +1,8 @@
 <template>
-  <section id="admin-panel" class="bg-gray-900 h-full text-gray w-full mt-8 pb-96">
-    <div id="student-view" class="border-skni-blue-700 border-2 py-8 pb-20 mx-2 rounded-lg min-h-screen">
-        <h1 class="text-white text-4xl font-mono font-extrabold mb-16">Edytuj Bazę Danych Członków Koła</h1>
-        <div class="flex justify-center space-x-16 font-mono mb-16 mx-32">
+  <section id="admin-panel" class="flex-1 bg-white min-h-screen min-w-screen text-gray w-full pb-96 my-4">
+    <div id="student-view" class="py-8 pb-20 mx-2 rounded-2xl min-h-screen place-content-center">
+        <h1 class="text-black text-4xl font-mono font-extrabold mb-16">Członkowie koła</h1>
+        <div class="flex justify-evenly space-x-2 font-mono mb-16 mx-2">
             <button id="admin-show" @click="toggle1 = !toggle1; toggle2 = false; toggle3 = false; toggle4 = false" class="text-green-400 font-bold border-green-400 border-2 px-16 py-4 rounded-full">Wyświetl</button>
             <button id="admin-add" @click="toggle2 = !toggle2; toggle1 = false; toggle3 = false; toggle4 = false" class="text-pink-400 font-bold border-pink-400 border-2 px-16 py-4 rounded-full">Dodaj</button>
             <button id="admin-update" @click="toggle3 = !toggle3; toggle2 = false; toggle1 = false; toggle4 = false" class="text-skni-blue-500 font-bold border-skni-blue-500 border-2 px-16 py-4 rounded-full">Aktualizuj</button>

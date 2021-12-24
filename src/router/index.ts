@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
-import Admin_Panel from '../views/Admin_Panel.vue'
+import Members from '../views/Members.vue'
+import Sections from '../views/Sections.vue'
+import Projects from '../views/Projects.vue'
+import Roles from '../views/Roles.vue'
 
 Vue.use(VueRouter)
 
@@ -12,9 +15,24 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
-    path: '/admin-panel',
-    name: 'Admin_Panel',
-    component: Admin_Panel
+    path: '/members',
+    name: 'Members',
+    component: Members
+  },
+  {
+    path: '/sections',
+    name: 'Sections',
+    component: Sections
+  },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: Projects
+  },
+  {
+    path: '/roles',
+    name: 'Roles',
+    component: Roles
   },
 ]
 
