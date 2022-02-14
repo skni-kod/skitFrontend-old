@@ -26,6 +26,7 @@
             class="flex shadow dark:bg-gray-700 border dark:border-gray-900 rounded w-full py-2 px-3 text-gray-800 dark:text-gray-200"
             id="username"
             type="username"
+            v-model="username"
             placeholder="Użytkownik"
           />
         </div>
@@ -34,6 +35,7 @@
             class="flex shadow dark:bg-gray-700 border dark:border-gray-900 rounded w-full py-2 px-3 text-gray-800 dark:text-gray-200"
             id="password"
             type="password"
+            v-model="password"
             placeholder="Hasło"
           />
         </div>
@@ -41,6 +43,7 @@
       <button
         id="PromptButton"
         class="flex bg-new-green hover:bg-green-900 w-12 rounded h-24 border border-gray-900 shadow mt-12 items-center justify-center transition duration-300 ease-in-out"
+        @click="login()"
       >
         <svg class="h-5 w-5 fill-current text-gray-200">
           <path d="M 0 0 L 20 10 L 0 20 Z" />
@@ -50,33 +53,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
+<script setup lang="ts">
+const props = defineProps({
+  msg: String,
+});
 
-@Options({
-  props: {
-    msg: String,
-  },
-})
-export default class LoginScreen extends Vue {
-  msg!: string;
+const username = "";
+const password = "";
+
+function login() {
+  console.log(username, password);
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
