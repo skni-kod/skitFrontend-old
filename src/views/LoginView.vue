@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <LoginScreen msg="Message" class="bg-gray-300 dark:bg-gray-800" />
+  <div id="LoginViewContainer">
+    <LoginScreen
+      msg="Zaloguj się do platformy CoreApp"
+      class="bg-gray-300 dark:bg-gray-800"
+    />
   </div>
 </template>
 
