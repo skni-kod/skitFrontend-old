@@ -1,4 +1,4 @@
-# uczymysietailwinda
+# coreappfrontend
 
 ## Project setup
 ```

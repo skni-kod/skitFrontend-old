@@ -1,13 +1,78 @@
 module.exports = {
-  purge: ['./index.html', './src/**/*.vue,js,ts,jsx,tsx}'],
-  darkMode: 'class', // or 'media' or 'class'
+  content: ["./public/index.html", "./src/**/*.{vue, js, ts, jsx, tsx}"],
+  darkMode: "media",
   theme: {
     extend: {
-      
+      colors: {
+        "skni-blue-500": "#55ACEE",
+        "skni-blue-600": "#016FA5",
+        "skni-blue-700": "#00699D",
+        "skni-blue-800": "#174b82",
+        "skni-blue-900": "#2E336F",
+        "new-green": "#0f7300",
+      },
     },
   },
   variants: {
-    extend: {},
+    cursor: ["responsive", "disabled"],
+    fontWeight: [
+      "responsive",
+      "hover",
+      "focus",
+      "active",
+      "group-hover",
+      "dark",
+    ],
+    opacity: ["responsive", "hover", "focus", "disabled", "dark"],
+    textColor: [
+      "responsive",
+      "hover",
+      "focus",
+      "disabled",
+      "group-hover",
+      "focus-within",
+      "dark",
+    ],
+    borderColor: [
+      "responsive",
+      "hover",
+      "focus",
+      "disabled",
+      "last",
+      "group-hover",
+      "focus-within",
+      "dark",
+    ],
+    borderWidth: ["responsive", "last"],
+    boxShadow: [
+      "responsive",
+      "hover",
+      "focus",
+      "active",
+      "group-hover",
+      "dark",
+    ],
+    backgroundOpacity: [
+      "responsive",
+      "hover",
+      "focus",
+      "active",
+      "disabled",
+      "group-hover",
+      "dark",
+    ],
+    backgroundColor: [
+      "responsive",
+      "hover",
+      "disabled",
+      "focus",
+      "odd",
+      "even",
+      "checked",
+      "dark",
+    ],
+    placeholderColor: ["responsive", "focus", "disabled", "dark"],
+    margin: ["responsive", "hover", "focus", "first"],
   },
   plugins: [],
-}
+};
