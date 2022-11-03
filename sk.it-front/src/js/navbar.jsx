@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/navbar.css";
 
-const projectName = "CoreApp";
+const projectName = "sk.it";
 class Navbar extends React.Component {
   render() {
     return (
