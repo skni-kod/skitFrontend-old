@@ -7,11 +7,11 @@ class Navbar extends React.Component {
     return (
       <>
         <header>
-          <logo>
+          <div class="logo">
             <h1>{projectName}</h1>
             <h2>Baza informacji o rzeszowskich firmach IT</h2>
-          </logo>
-          <Menu id="menu" />
+          </div>
+          <Menu class="menu" />
         </header>
       </>
     );
@@ -21,12 +21,11 @@ class Menu extends React.Component {
   render() {
     return (
       <>
-        <ul id="options">
-          <li id="o1">Strona główna</li>
-          <li id="o2">Aktualności z rynku</li>
-          <li id="o3">Firmy</li>
-          <li id="o4">Autorzy</li>
-          <li id="o5">Zaloguj</li>
+        <ul class="options">
+          <li class="o1">Strona główna</li>
+          <li class="o2">Aktualności z rynku</li>
+          <li class="o3">Dodaj firmę</li>
+          <li class="o4">Zaloguj</li>
         </ul>
       </>
     );
