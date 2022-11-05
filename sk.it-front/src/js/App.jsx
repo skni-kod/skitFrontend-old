@@ -1,9 +1,17 @@
-import logo from "../svg/logo.jsx";
-import "../css/App.css";
+import React from "react";
+import "../css/app.css";
 import Navbar from "./navbar";
+import Footer from "./footer";
 
-function App() {
-  return <Navbar />;
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Navbar />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;
