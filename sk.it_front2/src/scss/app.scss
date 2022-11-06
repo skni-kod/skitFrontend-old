@@ -1,0 +1,17 @@
+$lightblue: #009ffd;
+$yellow: #ffa400;
+$darkblue: #2a2a72;
+$black: #232528;
+$white: #eaf6ff;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background: $darkblue;
+  color: $white;
+}
+a {
+  color: inherit;
+}
