@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/static.css";
+import "../scss/static.scss";
 import Icon from "../svg/logo.jsx";
 
 class Footer extends React.Component {
