@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { Navbar } from "../components/navbar/navbar";
+import { Navbar } from "@/components/navbar/navbar";
+import { Footer } from "@/components/footer/footer";
 export default function Root() {
   return (
     <div>
@@ -8,7 +9,8 @@ export default function Root() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar text={"xd"} />
+      <Navbar />
+      <Footer />
     </div>
   );
 }
