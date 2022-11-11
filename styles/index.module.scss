@@ -1,10 +1,21 @@
 @import "variables.scss";
-.container {
-  height: 100vh;
-  display: grid;
+.container1 {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: $white;
 }
 .stats {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.stat {
+  font-size: 50px;
+}
+.statElem {
+  font-size: 30px;
 }

@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import styles from "@/styles/index.module.scss";
+import { render } from "react-dom";
+import { motion } from "framer-motion";
 
 export default function Root() {
   return (
@@ -12,23 +14,35 @@ export default function Root() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className={styles.container}>
+      <div className={styles.container1}>
         <div className={styles.stats}>
-          <h1>Na naszej stronie znajdziesz: </h1>
+          <h2>IT?</h2>
+          <Text />
           <ul>
-            <li>
-              <span className={styles.nfirm}>0</span> firm
+            <li className={styles.statElem}>
+              <span className={styles.stat}>0</span> pracodawców,
             </li>
-            <li>
-              <span className={styles.nofert}>0</span> ofert pracy
+            <li className={styles.statElem}>
+              <span className={styles.stat}>0</span> ofert pracy,
             </li>
-            <li>
-              <span className={styles.tech}>0</span> technologii
+            <li className={styles.statElem}>
+              <span className={styles.stat}>0</span> technologii.
             </li>
           </ul>
         </div>
+        <div className={styles.button}></div>
       </div>
       <Footer />
+    </div>
+  );
+}
+
+function Text() {
+  return (
+    <div className={styles.examplecontainer}>
+      <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+        <h1>na naszej stronie znajdziesz...</h1>
+      </motion.div>
     </div>
   );
 }

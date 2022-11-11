@@ -4,12 +4,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  transition: transform 0.5s;
 }
 .logoImage {
   width: 100px;
   height: auto;
-}
-.logo:hover {
-  transform: scale(1.05);
 }
