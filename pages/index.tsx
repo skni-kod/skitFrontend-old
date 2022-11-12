@@ -4,10 +4,17 @@ import { Footer } from "@/components/footer/footer";
 import styles from "@/styles/index.module.scss";
 import { render } from "react-dom";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Background from "@/public/backg.svg";
 
 export default function Root() {
   return (
     <div>
+      <Image
+        className={styles.background}
+        src={Background}
+        alt={"background"}
+      ></Image>
       <Head>
         <title>sk-it</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

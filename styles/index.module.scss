@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: $white;
 }
 .stats {
   display: flex;
@@ -18,4 +17,12 @@
 }
 .statElem {
   font-size: 30px;
+}
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
 }
