@@ -18,11 +18,28 @@
 .statElem {
   font-size: 30px;
 }
-.background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+.body {
+  display: block;
+  position: relative;
+  z-index: 0;
+  background: #55828b91;
+}
+.body::after {
+  content: "";
+  background: url("../public/backg.svg");
   opacity: 0.1;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.subtitle {
+  color: white;
+  transition: color 0.3s;
+}
+.subtitle:hover {
+  cursor: pointer;
+  color: $white;
 }

@@ -6,15 +6,12 @@ import { render } from "react-dom";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Background from "@/public/backg.svg";
+import router, { useRouter } from "next/router";
+import React from "react";
 
 export default function Root() {
   return (
-    <div>
-      <Image
-        className={styles.background}
-        src={Background}
-        alt={"background"}
-      ></Image>
+    <div className={styles.body}>
       <Head>
         <title>sk-it</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -45,9 +42,13 @@ export default function Root() {
 }
 
 function Text() {
+  const go = (e: React.MouseEvent) => {
+    e.preventDefault();
+    router.push("/firmy");
+  };
   return (
-    <div className={styles.examplecontainer}>
-      <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+    <div onClick={go} className={styles.subtitle}>
+      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <h1>na naszej stronie znajdziesz...</h1>
       </motion.div>
     </div>
