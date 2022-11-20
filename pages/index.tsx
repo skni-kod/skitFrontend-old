@@ -2,12 +2,13 @@ import Head from "next/head";
 import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import styles from "@/styles/index.module.scss";
-import { render } from "react-dom";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Background from "@/public/backg.svg";
 import router, { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
+import { VscChevronDown } from "react-icons/vsc";
+import Link from "next/link";
 
 export default function Root() {
   return (
@@ -34,11 +35,56 @@ export default function Root() {
             </li>
           </ul>
         </div>
-        <div className={styles.button}></div>
+        <ScrollButton />
       </div>
+      <Preview />
       <Footer />
     </div>
   );
+}
+
+function ScrollButton() {
+  const [height, setHeight] = useState(window.innerHeight);
+  return (
+    <div
+      onClick={function () {
+        Scroller(height);
+      }}
+      className={styles.button}
+    >
+      <VscChevronDown />
+    </div>
+  );
+}
+
+function Scroller(height: number) {
+  window.scrollTo({
+    top: height - 80,
+    behavior: "smooth",
+  });
+}
+
+function Preview() {
+  return (
+    <div className={styles.preview}>
+      <h2 className={styles.prevtitle}>Najwyżej oceniane oferty: </h2>
+      <div className={styles.prevcompanies}>
+        <PrevCompany />
+        <PrevCompany />
+        <PrevCompany />
+        <PrevCompany />
+        <PrevCompany />
+        <PrevCompany />
+      </div>
+      <Link href={"./firmy"}>
+        <h3 className={styles.link}>Pokaż więcej</h3>
+      </Link>
+    </div>
+  );
+}
+
+function PrevCompany() {
+  return <div className={styles.prevcompany}></div>;
 }
 
 function Text() {

@@ -1,6 +1,7 @@
 @import "variables.scss";
+$height: calc(100vh - 80px);
 .container1 {
-  height: calc(100vh - 80px);
+  height: $height;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,11 +19,31 @@
 .statElem {
   font-size: 30px;
 }
+@keyframes arrowmove {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 20px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+.button {
+  font-size: 50px;
+  margin-top: 50px;
+  animation: arrowmove 1.5s infinite;
+  position: relative;
+}
+.button:hover {
+  cursor: pointer;
+}
 .body {
   display: block;
   position: relative;
   z-index: 0;
-  background: #55828b91;
+  background: $background;
 }
 .body::after {
   content: "";
@@ -42,4 +63,38 @@
 .subtitle:hover {
   cursor: pointer;
   color: $white;
+}
+//preview
+.preview {
+  height: $height;
+  background-color: #55828bb0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.prevcompanies {
+  margin: 50px 0;
+  display: grid;
+  width: 90vw;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  column-gap: 5vw;
+}
+.prevcompany {
+  background: $white;
+  width: 40vw;
+  height: 15vh;
+  margin: 10px;
+}
+.prevtitle {
+  font-size: 40px;
+}
+.link {
+  font-size: 20px;
+  transition: color 0.3s;
+}
+.link:hover {
+  color: $green;
 }
