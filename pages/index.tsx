@@ -9,6 +9,7 @@ import router, { useRouter } from "next/router";
 import React, { useState } from "react";
 import { VscChevronDown } from "react-icons/vsc";
 import Link from "next/link";
+import Company from "@/public/companies/asseco-logo-753x424-1.jpg";
 
 export default function Root() {
   return (
@@ -35,7 +36,9 @@ export default function Root() {
             </li>
           </ul>
         </div>
-        <ScrollButton />
+        <a href="#preview">
+          <VscChevronDown className={styles.button} />
+        </a>
       </div>
       <Preview />
       <Footer />
@@ -43,30 +46,9 @@ export default function Root() {
   );
 }
 
-function ScrollButton() {
-  const [height, setHeight] = useState(window.innerHeight);
-  return (
-    <div
-      onClick={function () {
-        Scroller(height);
-      }}
-      className={styles.button}
-    >
-      <VscChevronDown />
-    </div>
-  );
-}
-
-function Scroller(height: number) {
-  window.scrollTo({
-    top: height - 80,
-    behavior: "smooth",
-  });
-}
-
 function Preview() {
   return (
-    <div className={styles.preview}>
+    <div className={styles.preview} id="preview">
       <h2 className={styles.prevtitle}>Najwyżej oceniane oferty: </h2>
       <div className={styles.prevcompanies}>
         <PrevCompany />
@@ -84,7 +66,19 @@ function Preview() {
 }
 
 function PrevCompany() {
-  return <div className={styles.prevcompany}></div>;
+  return (
+    <a href="/firmy">
+      <div className={styles.prevcompany}>
+        <Image className={styles.compImg} src={Company} alt={"companyLogo"} />
+        <div className={styles.description}>
+          <div className={styles.offerTitle}>Tytuł oferty junior developer</div>
+          <div className={styles.jobType}>Pełny etat</div>
+          <div className={styles.salary}>3500-4000zł</div>
+        </div>
+        <div className={styles.rating}>7.5</div>
+      </div>
+    </a>
+  );
 }
 
 function Text() {

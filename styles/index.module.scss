@@ -87,6 +87,14 @@ $height: calc(100vh - 80px);
   width: 40vw;
   height: 15vh;
   margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $black;
+  transition: transform 0.2s ease-in-out;
+}
+.prevcompany:hover {
+  transform: scale(1.01);
 }
 .prevtitle {
   font-size: 40px;
@@ -97,4 +105,30 @@ $height: calc(100vh - 80px);
 }
 .link:hover {
   color: $green;
+}
+.compImg {
+  height: 100%;
+  width: auto;
+  display: inline-block;
+}
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+}
+.offerTitle {
+  font-weight: bold;
+  border-bottom: 1px solid $black;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+.jobType {
+  padding: 5px;
+}
+.rating {
+  margin: 10px;
 }
