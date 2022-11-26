@@ -18,3 +18,11 @@ li {
 h1 {
   font-size: 60px;
 }
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 40px;
+  }
+  ul {
+    padding: 0;
+  }
+}

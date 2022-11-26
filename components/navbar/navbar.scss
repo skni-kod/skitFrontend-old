@@ -37,3 +37,22 @@ menu a {
 menu a:hover {
   color: $green;
 }
+@media screen and (max-width: 1130px) {
+  nav {
+    position: static;
+  }
+}
+@media screen and (max-width: 640px) {
+  nav li {
+    font-size: 15px;
+    padding: 2px;
+  }
+}
+@media screen and (max-width: 540px) {
+  menu li {
+    font-size: 12px;
+  }
+  menu {
+    padding: 0;
+  }
+}

@@ -4,7 +4,6 @@ import { Footer } from "@/components/footer/footer";
 import styles from "@/styles/index.module.scss";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Background from "@/public/backg.svg";
 import router, { useRouter } from "next/router";
 import React, { useState } from "react";
 import { VscChevronDown } from "react-icons/vsc";

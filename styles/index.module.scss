@@ -132,3 +132,54 @@ $height: calc(100vh - 80px);
 .rating {
   margin: 10px;
 }
+
+/////
+
+@media screen and (max-width: 1130px) {
+  .stats {
+    text-align: center;
+  }
+  .statElem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+  }
+  .preview {
+    height: auto;
+  }
+  .prevcompanies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .prevcompany {
+    height: auto;
+    width: 90vw;
+    font-size: 20px;
+  }
+  .compImg {
+    width: 40%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 540px) {
+  .stats {
+    padding: 0;
+  }
+  .prevcompany {
+    font-size: 15px;
+  }
+  .compImg {
+    width: 40%;
+    height: auto;
+  }
+  .prevtitle {
+    font-size: 30px;
+  }
+  .container1 {
+    transform: scale(0.8);
+  }
+}
