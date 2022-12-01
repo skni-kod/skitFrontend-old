@@ -1,0 +1,28 @@
+@import "variables.scss";
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $greyGreen;
+}
+ul span {
+  border: 1px solid $white;
+  padding: 5px;
+  margin: 5px;
+  color: $white;
+}
+li {
+  margin: 0 15px;
+}
+h1 {
+  font-size: 60px;
+}
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 40px;
+  }
+  ul {
+    padding: 0;
+  }
+}

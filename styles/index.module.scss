@@ -1,0 +1,184 @@
+@import "variables.scss";
+.container1 {
+  height: $height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.stat {
+  font-size: 50px;
+}
+.statElem {
+  font-size: 30px;
+}
+@keyframes arrowmove {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 20px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+.button {
+  font-size: 50px;
+  margin-top: 50px;
+  animation: arrowmove 1.5s infinite;
+  position: relative;
+}
+.button:hover {
+  cursor: pointer;
+}
+.body {
+  display: block;
+  position: relative;
+  z-index: 0;
+  background: $background;
+}
+.body::after {
+  content: "";
+  background: url("../public/backg.svg");
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.subtitle {
+  color: white;
+  transition: color 0.3s;
+}
+.subtitle:hover {
+  cursor: pointer;
+  color: $white;
+}
+//preview
+.preview {
+  height: $height;
+  background-color: #55828bb0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.prevcompanies {
+  margin: 50px 0;
+  display: grid;
+  width: 90vw;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  column-gap: 5vw;
+}
+.prevcompany {
+  background: $white;
+  width: 40vw;
+  height: 15vh;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $black;
+  transition: transform 0.2s ease-in-out;
+}
+.prevcompany:hover {
+  transform: scale(1.01);
+}
+.prevtitle {
+  font-size: 40px;
+}
+.link {
+  font-size: 20px;
+  transition: color 0.3s;
+}
+.link:hover {
+  color: $green;
+}
+.compImg {
+  height: 100%;
+  width: auto;
+  display: inline-block;
+}
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+}
+.offerTitle {
+  font-weight: bold;
+  border-bottom: 1px solid $black;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+.jobType {
+  padding: 5px;
+}
+.rating {
+  margin: 10px;
+}
+
+/////
+
+@media screen and (max-width: 1130px) {
+  .stats {
+    text-align: center;
+  }
+  .statElem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+  }
+  .preview {
+    height: auto;
+  }
+  .prevcompanies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .prevcompany {
+    height: auto;
+    width: 90vw;
+    font-size: 20px;
+  }
+  .compImg {
+    width: 40%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 540px) {
+  .stats {
+    padding: 0;
+  }
+  .prevcompany {
+    font-size: 15px;
+  }
+  .compImg {
+    width: 40%;
+    height: auto;
+  }
+  .prevtitle {
+    font-size: 30px;
+  }
+  .container1 {
+    transform: scale(0.8);
+  }
+}

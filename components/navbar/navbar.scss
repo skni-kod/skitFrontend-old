@@ -9,6 +9,7 @@ nav {
   position: sticky;
   top: 0;
   left: 0;
+  height: 80px;
 }
 nav span {
   font-size: 13px;
@@ -34,5 +35,24 @@ menu a {
   transition: all 0.5s;
 }
 menu a:hover {
-  color: $purple;
+  color: $green;
+}
+@media screen and (max-width: 1130px) {
+  nav {
+    position: static;
+  }
+}
+@media screen and (max-width: 640px) {
+  nav li {
+    font-size: 15px;
+    padding: 2px;
+  }
+}
+@media screen and (max-width: 540px) {
+  menu li {
+    font-size: 12px;
+  }
+  menu {
+    padding: 0;
+  }
 }
