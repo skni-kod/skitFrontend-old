@@ -2,32 +2,30 @@ import styles from "./navbar.module.scss";
 import Image from "next/image";
 import Logo from "@/public/faviconWhite.png";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export function Navbar() {
   return (
-    <nav>
-      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.8 }}>
-        <Link href={"."}>
+    <nav className={styles.nav}>
+      <div className={styles.logoBig}>
+        <Link className={styles.a} href={"."}>
           <div className={styles.logo}>
             <Image className={styles.logoImage} src={Logo} alt={"logo"}></Image>
-            <span>znajdź pracę w IT</span>
+            <span className={styles.foundJob}>znajdź pracę w IT</span>
           </div>
         </Link>
-      </motion.div>
-
-      <menu>
-        <Link href={"."}>
-          <li>Strona główna</li>
+      </div>
+      <menu className={styles.menu}>
+        <Link className={styles.a} href={"."}>
+          <li className={styles.li}>Strona główna</li>
         </Link>
-        <Link href={"/firmy"}>
-          <li>Firmy</li>
+        <Link className={styles.a} href={"/firmy"}>
+          <li className={styles.li}>Firmy</li>
         </Link>
-        <Link href={"./dodajfirme"}>
-          <li>Dodaj firmę</li>
+        <Link className={styles.a} href={"./dodajfirme"}>
+          <li className={styles.li}>Dodaj firmę</li>
         </Link>
-        <Link href={"./zaloguj"}>
-          <li>Zaloguj</li>
+        <Link className={styles.a} href={"./zaloguj"}>
+          <li className={styles.li}>Zaloguj</li>
         </Link>
       </menu>
     </nav>

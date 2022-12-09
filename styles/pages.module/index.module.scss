@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import "/styles/variables.scss";
 .container1 {
   height: $height;
   display: flex;
@@ -46,7 +46,7 @@
 }
 .body::after {
   content: "";
-  background: url("../public/backg.svg");
+  background: $backgPic;
   opacity: 0.1;
   top: 0;
   left: 0;
@@ -131,7 +131,17 @@
 .rating {
   margin: 10px;
 }
+.firmyButton {
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
 /////
 
 @media screen and (max-width: 1130px) {
