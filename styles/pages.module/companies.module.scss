@@ -25,3 +25,20 @@
   text-align: right;
   width: 100%;
 }
+.searchForm {
+  display: flex;
+  align-items: center;
+}
+.searchSubmit {
+  background-color: transparent;
+  border: none;
+  transform: rotateY(180deg);
+  transition: transform 0.2s ease-in-out;
+  font-size: large;
+  color: $white;
+  padding: 10px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}

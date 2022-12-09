@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import styles from "@/styles/pages.module/companies.module.scss";
-import { VscChevronUp } from "react-icons/vsc";
+import { VscChevronUp, VscSearch } from "react-icons/vsc";
 export default function Firmy() {
   return (
     <>
@@ -11,9 +11,13 @@ export default function Firmy() {
         <div className={styles.container}>
           <div className={styles.searchField}>
             <form className={styles.searchForm}>
-              <input type="text" className={styles.searchInput}></input>
+              <input
+                placeholder="Wyszukaj firmę, technologie, miasto"
+                type="text"
+                className={styles.searchInput}
+              ></input>
               <button type="submit" className={styles.searchSubmit}>
-                Szukaj
+                <VscSearch />
               </button>
             </form>
           </div>
