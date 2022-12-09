@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PrevCompany from "./prevCompany";
-import styles from "@/styles/index.module.scss";
+import styles from "@/styles/pages.module/index.module.scss";
 
 export function Preview() {
   return (

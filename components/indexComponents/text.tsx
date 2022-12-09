@@ -1,5 +1,5 @@
 import router from "next/router";
-import styles from "@/styles/index.module.scss";
+import styles from "@/styles/pages.module/index.module.scss";
 
 export function Text() {
   const go = (e: React.MouseEvent) => {

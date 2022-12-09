@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import "/styles/variables.scss";
 .container1 {
   height: $height;
   display: flex;
@@ -46,7 +46,7 @@
 }
 .body::after {
   content: "";
-  background: url("../public/backg.svg");
+  background: $backgPic;
   opacity: 0.1;
   top: 0;
   left: 0;

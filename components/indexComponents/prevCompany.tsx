@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "@/styles/index.module.scss";
+import styles from "@/styles/pages.module/index.module.scss";
 import Image from "next/image";
 import Company from "@/public/companies/asseco-logo-753x424-1.jpg";
 

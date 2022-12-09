@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
-import styles from "@/styles/companies.module.scss";
+import styles from "@/styles/pages.module/companies.module.scss";
 import { VscChevronUp } from "react-icons/vsc";
 export default function Firmy() {
   return (

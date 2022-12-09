@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import { Text } from "@/components/indexComponents/text";
-import styles from "@/styles/index.module.scss";
+import styles from "@/styles/pages.module/index.module.scss";
 import { Preview } from "@/components/indexComponents/preview";
 import router, { useRouter } from "next/router";
 import React, { useState } from "react";
