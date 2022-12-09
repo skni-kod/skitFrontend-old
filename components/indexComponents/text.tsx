@@ -1,14 +1,10 @@
-import router from "next/router";
 import styles from "@/styles/pages.module/index.module.scss";
+import Link from "next/link";
 
 export function Text() {
-  const go = (e: React.MouseEvent) => {
-    e.preventDefault();
-    router.push("/firmy");
-  };
   return (
-    <div onClick={go} className={styles.subtitle}>
+    <Link className={styles.subtitle} href="/firmy">
       <h1 className={styles.firmyButton}>na naszej stronie znajdziesz...</h1>
-    </div>
+    </Link>
   );
 }
