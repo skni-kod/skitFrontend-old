@@ -4,31 +4,11 @@
   flex-direction: column;
   align-items: center;
 }
+////////////////////////////SEARCH
 .searchField {
   padding-top: 30px;
   display: flex;
   justify-content: center;
-}
-.filters {
-  display: flex;
-  justify-content: center;
-}
-.company {
-  width: 80vw;
-  height: 40vh;
-  background: $white;
-  margin: 50px 10px;
-  color: $black;
-}
-
-.arrowUp {
-  font-size: 50px;
-  text-align: right;
-  width: 100%;
-  position: fixed;
-  bottom: 10vh;
-  right: 3vw;
-  color: $white;
 }
 .searchForm {
   display: flex;
@@ -46,4 +26,42 @@
     cursor: pointer;
     transform: scale(1.1);
   }
+}
+///////////////////////////FILTERS
+.filters {
+  display: flex;
+  justify-content: center;
+}
+.filters > * {
+  transition: transform 0.2s ease-in-out;
+}
+.filters *:hover {
+  cursor: pointer;
+}
+.filters *:active {
+  transform: scale(0.9);
+}
+.filterOptions {
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+  font-size: xx-large;
+  max-height: 300px;
+}
+//////////////////////////COMPANIES
+.company {
+  width: 80vw;
+  height: 40vh;
+  background: $white;
+  margin: 50px 10px;
+  color: $black;
+}
+//////////////////////////MISC
+.arrowUp {
+  font-size: 50px;
+  text-align: right;
+  position: fixed;
+  bottom: 10vh;
+  right: 3vw;
+  color: $white;
 }

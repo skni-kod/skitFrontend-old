@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PrevCompany from "./prevCompany";
 import styles from "@/styles/pages.module/index.module.scss";
+import ScrollUp from "./scrollUp";
 
 export function Preview() {
   return (
@@ -15,8 +16,9 @@ export function Preview() {
         <PrevCompany />
       </div>
       <Link href={"./firmy"}>
-        <h3 className={styles.link}>Pokaż więcej</h3>
+        <h3 className={styles.link}>Pokaż wszystko</h3>
       </Link>
+      <ScrollUp />
     </div>
   );
 }
