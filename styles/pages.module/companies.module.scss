@@ -41,12 +41,28 @@
 .filters *:active {
   transform: scale(0.9);
 }
+.filterSelect {
+  color: inherit;
+}
+.filterSelected {
+  color: red;
+}
 .filterOptions {
   display: flex;
   justify-content: center;
+  align-items: center;
   column-gap: 15px;
   font-size: xx-large;
   max-height: 300px;
+}
+.filterOptions > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+}
+.workType {
+  font-size: medium;
 }
 //////////////////////////COMPANIES
 .company {

@@ -1,5 +1,5 @@
 import styles from "@/styles/pages.module/companies.module.scss";
-import { VscChevronDown } from "react-icons/vsc";
+import { VscChevronDown, VscChevronRight } from "react-icons/vsc";
 import {
   SiAngular,
   SiBabel,
@@ -20,9 +20,14 @@ import {
   SiTypescript,
   SiVuedotjs,
 } from "react-icons/si";
-import { MdOnlinePrediction, MdWorkOutline } from "react-icons/md";
-import { useState } from "react";
-import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import {
+  MdCheckBox,
+  MdOnlinePrediction,
+  MdOutlineHomeWork,
+  MdWorkOutline,
+} from "react-icons/md";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Filters(this: any) {
   const container = {
@@ -34,49 +39,131 @@ export default function Filters(this: any) {
       },
     },
   };
+  function select(n: number) {
+    setIsShown(n);
+    setSelected(n);
+  }
   var [isShown, setIsShown] = useState(3);
+  var [isSelected, setSelected] = useState(3);
+  const optionStyle = {
+    color: "inherit",
+  };
+  const selectedStyle = {
+    color: "#55828b",
+  };
   return (
     <div className={styles.container}>
       <ul className={styles.filters}>
-        <li className={styles.filtersComp}>
-          Firmy <VscChevronDown />
-        </li>
-        <li className={styles.filtersCity}>
-          Miejsce pracy <VscChevronDown />
-        </li>
-        <li onClick={() => setIsShown(2)} className={styles.filtersType}>
-          Rodzaj pracy <VscChevronDown />
-        </li>
-        <li onClick={() => setIsShown(3)} className={styles.filtersTech}>
-          Technologie <VscChevronDown />
-        </li>
+        {isSelected == 1 && (
+          <li onClick={() => select(1)} style={selectedStyle}>
+            Miejsce pracy <VscChevronDown />
+          </li>
+        )}
+        {isSelected != 1 && (
+          <li onClick={() => select(1)} style={optionStyle}>
+            Miejsce pracy <VscChevronDown />
+          </li>
+        )}
+        {isSelected == 2 && (
+          <li onClick={() => select(2)} style={selectedStyle}>
+            Rodzaj pracy <VscChevronDown />
+          </li>
+        )}
+        {isSelected != 2 && (
+          <li onClick={() => select(2)} style={optionStyle}>
+            Rodzaj pracy <VscChevronDown />
+          </li>
+        )}
+        {isSelected == 3 && (
+          <li onClick={() => select(3)} style={selectedStyle}>
+            Technologie <VscChevronDown />
+          </li>
+        )}
+        {isSelected != 3 && (
+          <li onClick={() => select(3)} style={optionStyle}>
+            Technologie <VscChevronDown />
+          </li>
+        )}
         <div className={styles.filterButton}>Filtruj</div>
       </ul>
-
-      {isShown == 3 && (
+      {isShown == 1 && (
         <motion.div variants={container} initial="hidden" animate="show">
-          <TechFilter />
+          <CityFilter />
         </motion.div>
       )}
-
       {isShown == 2 && (
         <motion.div variants={container} initial="hidden" animate="show">
           <WorkFilter />
         </motion.div>
       )}
-
+      {isShown == 3 && (
+        <motion.div variants={container} initial="hidden" animate="show">
+          <TechFilter />
+        </motion.div>
+      )}
       <div className={styles.searchResultsTitle}>Wyniki wyszukiwania: </div>
+    </div>
+  );
+}
+function CityFilter() {
+  const [checked, setChecked] = useState(false);
+  function handleChange() {
+    setChecked(!checked);
+  }
+  useEffect(() => {
+    setChecked(!checked);
+  }, []);
+  return (
+    <div className={styles.filterOptions}>
+      <div>
+        <VscChevronRight />
+        <label className={styles.workType}>
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <span className={styles.workType}>Rzeszów</span>
+        </label>
+      </div>
+      <div>
+        <label className={styles.workType}>
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <span className={styles.workType}>Kraków</span>
+        </label>
+      </div>
+      <div>
+        <label className={styles.workType}>
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <span className={styles.workType}>Wrocław</span>
+        </label>
+      </div>
+      <div>
+        <label className={styles.workType}>
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <span className={styles.workType}>Warszawa</span>
+        </label>
+      </div>
+      <div>
+        <label className={styles.workType}>
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <span className={styles.workType}>Poznań</span>
+        </label>
+      </div>
     </div>
   );
 }
 function WorkFilter() {
   return (
     <div className={styles.filterOptions}>
+      <VscChevronRight />
       <div>
         <MdWorkOutline />
+        <span className={styles.workType}>Praca stacjonarna</span>
       </div>
       <div>
         <MdOnlinePrediction />
+        <span className={styles.workType}>Praca zdalna</span>
+      </div>
+      <div>
+        <MdOutlineHomeWork />
+        <span className={styles.workType}>Praca hybrydowa</span>
       </div>
     </div>
   );
@@ -84,58 +171,59 @@ function WorkFilter() {
 function TechFilter() {
   return (
     <div className={styles.filterOptions}>
-      <div>
+      <VscChevronRight />
+      <div className={styles.tech}>
         <SiJavascript />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiTypescript />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiDotnet />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiCplusplus />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiC />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiAngular />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiReact />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiNodedotjs />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiVuedotjs />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiBabel />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiNextdotjs />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiSass />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiJava />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiSqlite />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiMysql />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiOracle />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiPython />
       </div>
-      <div>
+      <div className={styles.tech}>
         <SiDjango />
       </div>
     </div>
