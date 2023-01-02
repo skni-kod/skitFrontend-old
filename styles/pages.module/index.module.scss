@@ -141,6 +141,9 @@
     transform: scale(0.9);
   }
 }
+.city {
+  align-self: flex-end;
+}
 /////
 
 @media screen and (max-width: 1130px) {

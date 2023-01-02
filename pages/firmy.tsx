@@ -6,6 +6,7 @@ import { VscSearch } from "react-icons/vsc";
 import ScrollUp from "@/components/indexComponents/scrollUp";
 import Search from "@/components/indexComponents/search";
 import Filters from "@/components/indexComponents/filters";
+import PrevCompany from "@/components/indexComponents/prevCompany";
 
 export default function Firmy() {
   return (
@@ -15,22 +16,11 @@ export default function Firmy() {
         <div className={styles.container}>
           <Search />
           <Filters />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
+          <PrevCompany />
         </div>
         <ScrollUp />
         <Footer />
       </div>
     </>
   );
-}
-function Company() {
-  return <div className={styles.company}></div>;
 }

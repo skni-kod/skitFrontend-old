@@ -9,11 +9,6 @@ export function Preview() {
       <h2 className={styles.prevtitle}>Najwyżej oceniane oferty: </h2>
       <div className={styles.prevcompanies}>
         <PrevCompany />
-        <PrevCompany />
-        <PrevCompany />
-        <PrevCompany />
-        <PrevCompany />
-        <PrevCompany />
       </div>
       <Link href={"./firmy"}>
         <h3 className={styles.link}>Pokaż wszystko</h3>
