@@ -105,8 +105,10 @@
   color: $green;
 }
 .compImg {
-  height: 100%;
-  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 30%;
+  padding: 10px;
   display: inline-block;
 }
 .description {
