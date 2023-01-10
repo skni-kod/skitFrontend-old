@@ -5,7 +5,7 @@ import Company1 from "@/public/companies/1.jpg";
 import Company2 from "@/public/companies/2.png";
 import Company3 from "@/public/companies/3.jpg";
 import Company4 from "@/public/companies/4.png";
-type Company = {
+type Offer = {
   desc: {
     name: string;
     jobType: string;
@@ -17,7 +17,7 @@ type Company = {
   num: number;
 };
 
-const companies: Company[] = [
+const companies: Offer[] = [
   {
     desc: [
       {
