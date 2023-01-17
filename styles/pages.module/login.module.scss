@@ -54,6 +54,8 @@
 }
 .rememberLabel {
   align-self: flex-start;
+  display: flex;
+  align-items: center;
 }
 .forgotLink,
 .registerLink {
@@ -64,4 +66,27 @@
 .rememberLabel:hover {
   color: $greyGreen;
   cursor: pointer;
+}
+.rememberInput {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  height: 25px;
+  width: 25px;
+  background-color: $white;
+}
+.checkmark:after {
+  content: ">";
+  display: none;
+}
+.rememberInput:checked ~ .checkmark:after {
+  display: inline-block;
+}
+.checkmark:after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
 }

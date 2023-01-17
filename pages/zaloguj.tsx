@@ -34,6 +34,7 @@ export default function Zaloguj() {
               type="checkbox"
               name="remember"
             />
+            <span className={styles.checkmark}></span>
             Zapamiętaj mnie
           </label>
           <input className={styles.submitInput} type="submit" value="Zaloguj" />
