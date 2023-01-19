@@ -1,10 +1,11 @@
-@import "@/styles/variables.scss";
+@import "./styles/variables.scss";
 .loginPage {
   height: $height;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 .loginForm {
   display: flex;
@@ -47,6 +48,7 @@
 }
 .submitInput:hover {
   cursor: pointer;
+  color: $greyGreen;
 }
 .emailLabel,
 .passLabel {
@@ -56,6 +58,7 @@
   align-self: flex-start;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .forgotLink,
 .registerLink {
@@ -79,7 +82,7 @@
   background-color: $white;
 }
 .checkmark:after {
-  content: ">";
+  content: "</>";
   display: none;
 }
 .rememberInput:checked ~ .checkmark:after {
@@ -89,4 +92,15 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
+}
+.return {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.return:hover {
+  color: $greyGreen;
 }
