@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PrevCompany from "./prevCompany";
 import styles from "@/styles/pages.module/index.module.scss";
+import ScrollUp from "./scrollUp";
 
 export function Preview() {
   return (
@@ -8,15 +9,11 @@ export function Preview() {
       <h2 className={styles.prevtitle}>Najwyżej oceniane oferty: </h2>
       <div className={styles.prevcompanies}>
         <PrevCompany />
-        <PrevCompany />
-        <PrevCompany />
-        <PrevCompany />
-        <PrevCompany />
-        <PrevCompany />
       </div>
       <Link href={"./firmy"}>
-        <h3 className={styles.link}>Pokaż więcej</h3>
+        <h3 className={styles.link}>Pokaż wszystko</h3>
       </Link>
+      <ScrollUp />
     </div>
   );
 }

@@ -4,10 +4,9 @@ import { Footer } from "@/components/footer/footer";
 import { Text } from "@/components/indexComponents/text";
 import styles from "@/styles/pages.module/index.module.scss";
 import { Preview } from "@/components/indexComponents/preview";
-import router, { useRouter } from "next/router";
 import React, { useState } from "react";
 import { VscChevronDown } from "react-icons/vsc";
-import Link from "next/link";
+import Search from "@/components/indexComponents/search";
 
 export default function Root() {
   return (
@@ -33,6 +32,7 @@ export default function Root() {
               <span className={styles.stat}>0</span> technologii.
             </li>
           </ul>
+          <Search />
         </div>
         <a href="#preview">
           <VscChevronDown className={styles.button} />

@@ -65,7 +65,7 @@
 }
 //preview
 .preview {
-  height: $height;
+  min-height: $height;
   background-color: #55828bb0;
   text-align: center;
   display: flex;
@@ -74,7 +74,7 @@
   justify-content: center;
 }
 .prevcompanies {
-  margin: 50px 0;
+  margin: 20px 0;
   display: grid;
   width: 90vw;
   grid-template-columns: auto auto;
@@ -96,18 +96,19 @@
   transform: scale(1.01);
 }
 .prevtitle {
-  font-size: 40px;
+  margin-top: 50px;
 }
 .link {
-  font-size: 20px;
   transition: color 0.3s;
 }
 .link:hover {
   color: $green;
 }
 .compImg {
-  height: 100%;
-  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 30%;
+  padding: 10px;
   display: inline-block;
 }
 .description {
@@ -141,6 +142,9 @@
   &:active {
     transform: scale(0.9);
   }
+}
+.city {
+  align-self: flex-end;
 }
 /////
 
@@ -184,9 +188,6 @@
   .compImg {
     width: 40%;
     height: auto;
-  }
-  .prevtitle {
-    font-size: 30px;
   }
   .container1 {
     transform: scale(0.8);

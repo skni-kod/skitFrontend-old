@@ -2,47 +2,25 @@ import Link from "next/link";
 import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import styles from "@/styles/pages.module/companies.module.scss";
-import { VscChevronUp } from "react-icons/vsc";
+import { VscSearch } from "react-icons/vsc";
+import ScrollUp from "@/components/indexComponents/scrollUp";
+import Search from "@/components/indexComponents/search";
+import Filters from "@/components/indexComponents/filters";
+import PrevCompany from "@/components/indexComponents/prevCompany";
+
 export default function Firmy() {
   return (
     <>
       <div>
         <Navbar />
         <div className={styles.container}>
-          <div className={styles.searchField}>
-            <form className={styles.searchForm}>
-              <input type="text" className={styles.searchInput}></input>
-              <button type="submit" className={styles.searchSubmit}>
-                Szukaj
-              </button>
-            </form>
-          </div>
-          <ul className={styles.filters}>
-            <li className={styles.filtersComp}>Firmy</li>
-            <li className={styles.filtersCity}>Miejsce pracy</li>
-            <li className={styles.filtersType}>Rodzaj pracy</li>
-            <li className={styles.filtersTech}>Technologie</li>
-            <div className={styles.filterButton}>Filtruj</div>
-          </ul>
-          <div className={styles.searchResultsTitle}>Wyniki wyszukiwania: </div>
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
-          <Company />
+          <Search />
+          <Filters />
+          <PrevCompany />
         </div>
-        <a href="#top">
-          <VscChevronUp className={styles.arrow} />
-        </a>
+        <ScrollUp />
         <Footer />
       </div>
     </>
   );
-}
-function Company() {
-  return <div className={styles.company}>xd</div>;
 }
