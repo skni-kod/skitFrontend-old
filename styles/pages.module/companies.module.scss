@@ -90,11 +90,24 @@
   color: $black;
 }
 //////////////////////////MISC
-.arrowUp {
+.arrowUp,
+.arrowUp_inner {
   font-size: 50px;
-  text-align: right;
   position: fixed;
   bottom: 10vh;
   right: 3vw;
   color: $white;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 1130px) {
+  .arrowUp,
+  .arrowUp_inner {
+    background: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+  }
 }
