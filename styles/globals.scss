@@ -39,6 +39,9 @@ ul span {
 li {
   margin: 0 15px;
 }
+input {
+  outline: none;
+}
 
 @media screen and (max-width: 640px) {
   ul {

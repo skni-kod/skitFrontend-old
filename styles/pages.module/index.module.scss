@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
 }
 .stats {
   display: flex;
@@ -49,10 +48,13 @@
   content: "";
   background: $backgPic;
   opacity: 0.1;
-  top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
   position: absolute;
   z-index: -1;
 }
@@ -175,7 +177,6 @@
     justify-content: center;
   }
   .prevcompany {
-    height: auto;
     width: 90vw;
     font-size: 20px;
   }

@@ -19,6 +19,8 @@
   box-shadow: 1px 0px 7px 0px rgba(202, 201, 201, 0.52);
   background-color: $white;
   color: $black;
+  min-width: 20vw;
+  max-width: 90vw;
 }
 .emailInput,
 .passInput {
@@ -30,8 +32,8 @@
   box-shadow: 1px 0px 7px 0px rgba(42, 42, 42, 0.52);
   padding: 15px;
   font-size: 15px;
-  width: 15vw;
-  height: 2vh;
+  max-height: 2vh;
+  width: 80%;
   margin: 0 10px;
 }
 .submitInput {
@@ -42,8 +44,9 @@
   box-shadow: 1px 0px 7px 0px rgba(42, 42, 42, 0.52);
   font-size: 15px;
   width: 50%;
-  height: 2vh;
+  min-height: 2vh;
   margin: 0 10px;
+  padding: 5px 0;
   color: $white;
 }
 .submitInput:hover {
@@ -53,6 +56,9 @@
 .emailLabel,
 .passLabel {
   font-size: 20px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
 }
 .rememberLabel {
   align-self: flex-start;

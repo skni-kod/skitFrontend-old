@@ -47,7 +47,7 @@
   display: none;
 }
 .a {
-  transition: all 0.5s;
+  transition: all 0.2s;
   &:hover {
     color: $green;
     text-decoration: none;
@@ -62,8 +62,10 @@
 }
 @media screen and (max-width: 640px) {
   .li {
-    font-size: 15px;
-    padding: 2px;
+    padding: 15px 10px;
+  }
+  .li:hover {
+    background: $white;
   }
   .menu {
     display: none;
@@ -78,6 +80,23 @@
   }
   .mobile_menu_items {
     display: none;
+  }
+  .mobile_menu:hover .mobile_menu_items,
+  .mobile_menu_items:hover {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 100vw;
+    background: $blue;
+    text-align: left;
+  }
+  .mobile_menu_items .li {
+    font-size: large;
+    margin: 0;
   }
   .logoImage {
     width: 70px;
