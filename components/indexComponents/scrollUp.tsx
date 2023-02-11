@@ -24,7 +24,7 @@ export default function ScrollUp() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          <a href="#top">
+          <a className={styles.arrowUp_inner} href="#top">
             <VscChevronUp />
           </a>
         </motion.div>

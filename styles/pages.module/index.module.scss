@@ -1,6 +1,6 @@
 @import "/styles/variables.scss";
 .container1 {
-  height: $height;
+  min-height: $height;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,10 +48,13 @@
   content: "";
   background: $backgPic;
   opacity: 0.1;
-  top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
   position: absolute;
   z-index: -1;
 }
@@ -100,6 +103,7 @@
 }
 .link {
   transition: color 0.3s;
+  -webkit-tap-highlight-color: transparent;
 }
 .link:hover {
   color: $green;
@@ -152,6 +156,9 @@
   .stats {
     text-align: center;
   }
+  .container1 {
+    min-height: 70vh;
+  }
   .statElem {
     display: flex;
     flex-direction: column;
@@ -161,6 +168,7 @@
   }
   .preview {
     height: auto;
+    font-size: small;
   }
   .prevcompanies {
     display: flex;
@@ -169,7 +177,6 @@
     justify-content: center;
   }
   .prevcompany {
-    height: auto;
     width: 90vw;
     font-size: 20px;
   }
@@ -179,17 +186,17 @@
   }
 }
 @media screen and (max-width: 540px) {
-  .stats {
-    padding: 0;
-  }
   .prevcompany {
     font-size: 15px;
   }
   .compImg {
     width: 40%;
-    height: auto;
+    min-height: auto;
   }
   .container1 {
-    transform: scale(0.8);
+    font-size: small;
+  }
+  .statElem {
+    font-size: small;
   }
 }
