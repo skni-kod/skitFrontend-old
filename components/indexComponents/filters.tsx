@@ -30,7 +30,7 @@ import { VscChevronDown } from "react-icons/vsc";
 
 import { motion, Variants } from "framer-motion";
 
-import styles from "@/styles/filters.module.scss";
+import styles from "@/styles/pages.module/filters.module.scss";
 
 type Filter = {
   category: string;

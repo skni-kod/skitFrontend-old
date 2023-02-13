@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: $blue;
+  background: $black;
   color: $white;
   padding: 10px;
   position: sticky;
@@ -49,7 +49,7 @@
 .a {
   transition: all 0.2s;
   &:hover {
-    color: $green;
+    color: $theme;
     text-decoration: none;
   }
 }
@@ -91,7 +91,7 @@
     left: 0;
     top: 60px;
     width: 100vw;
-    background: $blue;
+    background: $second;
     text-align: left;
   }
   .mobile_menu_items .li {

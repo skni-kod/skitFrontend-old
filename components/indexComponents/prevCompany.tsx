@@ -68,7 +68,7 @@ const companies: Offer[] = [
 export default function PrevCompany() {
   return (
     <Link href={"./firmy"}>
-      <div>
+      <div className={styles.preview}>
         {companies.map(({ desc, num }) => (
           <div key={num}>
             {desc.map(({ name, jobType, salary, city, rating, image }) => (

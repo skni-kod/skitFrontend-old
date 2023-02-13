@@ -24,7 +24,7 @@
 }
 .emailInput,
 .passInput {
-  border-color: #cccccc;
+  border-color: $third;
   border-style: solid;
   border-width: 0px;
   border-radius: 5px;
@@ -51,7 +51,7 @@
 }
 .submitInput:hover {
   cursor: pointer;
-  color: $greyGreen;
+  color: $third;
 }
 .emailLabel,
 .passLabel {
@@ -73,7 +73,7 @@
 .forgotLink:hover,
 .registerLink:hover,
 .rememberLabel:hover {
-  color: $greyGreen;
+  color: $theme;
   cursor: pointer;
 }
 .rememberInput {
@@ -108,7 +108,7 @@
   justify-content: center;
 }
 .return:hover {
-  color: $greyGreen;
+  color: $third;
 }
 .forgotInfo {
   margin: 20px;
