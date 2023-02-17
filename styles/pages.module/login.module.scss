@@ -35,6 +35,8 @@
   max-height: 2vh;
   width: 80%;
   margin: 0 10px;
+  display: flex;
+  align-items: center;
 }
 .submitInput {
   background-color: $black;
@@ -59,12 +61,11 @@
   width: 95%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .rememberLabel {
   align-self: flex-start;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .forgotLink,
 .registerLink {
@@ -87,14 +88,12 @@
   width: 25px;
   background-color: $white;
 }
-.checkmark:after {
-  content: "</>";
-  display: none;
-}
 .rememberInput:checked ~ .checkmark:after {
   display: inline-block;
+  content: "</>";
 }
 .checkmark:after {
+  content: "<>";
   width: 8px;
   height: 8px;
   border-radius: 50%;
