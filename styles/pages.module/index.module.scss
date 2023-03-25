@@ -34,6 +34,7 @@
   margin-top: 50px;
   animation: arrowmove 1.5s infinite;
   position: relative;
+  color: $theme;
 }
 .button:hover {
   cursor: pointer;
@@ -42,7 +43,7 @@
   display: block;
   position: relative;
   z-index: 0;
-  background: $background;
+  background: $black;
 }
 .body::after {
   content: "";
@@ -58,8 +59,11 @@
   position: absolute;
   z-index: -1;
 }
+.it {
+  color: $theme;
+}
 .subtitle {
-  color: white;
+  color: $white;
   transition: color 0.3s;
 }
 .subtitle:hover {
@@ -69,7 +73,6 @@
 //preview
 .preview {
   min-height: $height;
-  background-color: #55828bb0;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -77,7 +80,6 @@
   justify-content: center;
 }
 .prevcompanies {
-  margin: 20px 0;
   display: grid;
   width: 90vw;
   grid-template-columns: auto auto;
@@ -106,7 +108,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 .link:hover {
-  color: $green;
+  color: $theme;
 }
 .compImg {
   height: auto;

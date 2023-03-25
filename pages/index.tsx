@@ -19,7 +19,7 @@ export default function Root() {
       <Navbar />
       <div className={styles.container1}>
         <div className={styles.stats}>
-          <h2>IT?</h2>
+          <h2 className={styles.it}>IT?</h2>
           <Text />
           <ul>
             <li className={styles.statElem}>
