@@ -1,6 +1,6 @@
 import styles from "./navbar.module.scss";
 import Image from "next/image";
-import Logo from "@/public/faviconWhite.png";
+import Logo from "@/public/favicon.png";
 import Link from "next/link";
 import { VscMenu } from "react-icons/vsc";
 

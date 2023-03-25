@@ -17,7 +17,7 @@ type Offer = {
   num: number;
 };
 
-const companies: Offer[] = [
+export const companies: Offer[] = [
   {
     desc: [
       {
@@ -67,7 +67,7 @@ const companies: Offer[] = [
 
 export default function PrevCompany() {
   return (
-    <Link href={"./firmy"}>
+    <Link href={"./offer"}>
       <div className={styles.preview}>
         {companies.map(({ desc, num }) => (
           <div key={num}>

@@ -10,4 +10,37 @@
   width: 80vw;
   background: $white;
   border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+.compImg {
+  height: auto;
+  max-height: 100%;
+  max-width: 30%;
+  padding: 10px;
+  display: inline-block;
+}
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  width: 100%;
+  padding: 10px 0;
+}
+.offerTitle {
+  font-weight: bold;
+  border-bottom: 1px solid $black;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+.attr {
+  padding: 5px;
+}
+.rating {
+  margin: 10px;
 }
